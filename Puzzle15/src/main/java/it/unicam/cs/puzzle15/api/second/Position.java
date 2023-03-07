@@ -77,7 +77,7 @@ public class Position {
      * @param movingCell the moving cell
      * @return the position of the cell in the specified direction
      */
-    public Position movingCellPosition(MovingCell movingCell) {
+    public Position getPosition(MovingCell movingCell) {
         return new Position(row + movingCell.getRowOffset(), column + movingCell.getColumnOffset(), size);
     }
 
@@ -115,5 +115,15 @@ public class Position {
         }
 
         return moves;
+    }
+
+    /**
+     * Checks if the position is valid.
+     * A position is valid if it is inside the matrix.
+     *
+     * @return true if the position is valid, false otherwise
+     */
+    public boolean isValid() {
+        return row >= 0 && row < size && column >= 0 && column < size;
     }
 }

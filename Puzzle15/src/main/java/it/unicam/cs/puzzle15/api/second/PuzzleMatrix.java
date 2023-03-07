@@ -75,22 +75,18 @@ public class PuzzleMatrix {
      */
     public boolean move(MovingCell direction) {
 
-        // Calculate the new position of the moving cell in the specified direction
-        int row = this.movingCellPosition.getRow() + direction.getRowOffset();
-        int column = this.movingCellPosition.getColumn() + direction.getColumnOffset();
+        // Get the position of the cell to move
+        Position position = this.movingCellPosition.getPosition(direction);
 
-        // Check if the movement is valid (the new position is inside the matrix)
-        if (row < 0 || row >= this.size || column < 0 || column >= this.size) {
-            throw new IllegalArgumentException("Invalid direction: " + direction);
+        // Check if the position is valid
+        if (!position.isValid()) {
+            return false;
         }
 
-        // Swap the moving cell with the cell in the specified direction (the new position)
-        int temp = this.matrix[row][column];
-        this.matrix[row][column] = this.matrix[this.movingCellPosition.getRow()][this.movingCellPosition.getColumn()];
-        this.matrix[this.movingCellPosition.getRow()][this.movingCellPosition.getColumn()] = temp;
-
-        // Update the position of the moving cell with the new position calculated before
-        this.movingCellPosition = new Position(row, column, this.size);
+        // Move the cell in the specified direction and update the position of the moving cell
+        this.matrix[this.movingCellPosition.getRow()][this.movingCellPosition.getColumn()] = this.matrix[position.getRow()][position.getColumn()];
+        this.matrix[position.getRow()][position.getColumn()] = 0;
+        this.movingCellPosition = position;
 
         return true;
     }
@@ -102,13 +98,11 @@ public class PuzzleMatrix {
      *              (the higher the number, the more shuffled the matrix will be)
      */
     public void shuffle(int times) {
-        for (int i = 0; i < times; i++) {
-            move(MovingCell.getRandom());
-        }
+        shuffle(new Random(), times);
     }
 
     /**
-     * Shuffles the matrix.
+     * Shuffles the matrix with the specified random object.
      *
      * @param random the random object to use
      *               (the higher the number, the more shuffled the matrix will be)
