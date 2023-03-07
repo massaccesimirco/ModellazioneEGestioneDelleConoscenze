@@ -7,13 +7,16 @@ import java.util.Random;
  *
  * @author Matteo Machella
  */
-public enum MovingCell {
-    UP(-1, 0), DOWN(1, 0), LEFT(0, -1), RIGHT(0, 1);
+public enum CellMovement {
+    UP(-1, 0),
+    DOWN(1, 0),
+    LEFT(0, -1),
+    RIGHT(0, 1);
 
     private final int rowOffset;
     private final int columnOffset;
 
-    MovingCell(int rowOffset, int columnOffset) {
+    CellMovement(int rowOffset, int columnOffset) {
         this.rowOffset = rowOffset;
         this.columnOffset = columnOffset;
     }
@@ -23,11 +26,11 @@ public enum MovingCell {
      *
      * @return a random moving cell
      */
-    public static MovingCell getRandom() {
-        return values()[(int) (Math.random() * values().length)];
+    public static CellMovement getRandom() {
+        return getRandom(new Random());
     }
 
-    public static MovingCell getRandom(Random random) {
+    public static CellMovement getRandom(Random random) {
         return values()[random.nextInt(values().length)];
     }
 

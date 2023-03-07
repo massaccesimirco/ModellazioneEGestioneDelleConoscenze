@@ -73,7 +73,7 @@ public class PuzzleMatrix {
      * @return true if the movement is valid
      * @throws IllegalArgumentException if the movement is invalid
      */
-    public boolean move(MovingCell direction) {
+    public boolean move(CellMovement direction) {
 
         // Get the position of the cell to move
         Position position = this.movingCellPosition.getPosition(direction);
@@ -111,7 +111,7 @@ public class PuzzleMatrix {
      */
     public void shuffle(Random random, int times) {
         for (int i = 0; i < times; i++) {
-            move(MovingCell.getRandom(random));
+            move(CellMovement.getRandom(random));
         }
     }
 
@@ -121,7 +121,7 @@ public class PuzzleMatrix {
      *
      * @return the enabled moves
      */
-    public MovingCell[] enabledMoves() {
+    public CellMovement[] enabledMoves() {
         return this.movingCellPosition.enabledMoves();
     }
 
