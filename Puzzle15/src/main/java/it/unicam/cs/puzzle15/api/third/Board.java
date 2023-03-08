@@ -9,7 +9,7 @@ package it.unicam.cs.puzzle15.api.third;
  * <ul>fillBoard()</ul>
  * <ul>shuffle()</ul>
  */
-public interface PuzzleBoard {
+public interface Board {
 
     /**
      * Fills the board with numbers from 1 to size^2 - 1 and a FreeCell.

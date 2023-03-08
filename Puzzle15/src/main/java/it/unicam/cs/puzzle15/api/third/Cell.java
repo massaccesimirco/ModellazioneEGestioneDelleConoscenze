@@ -6,7 +6,7 @@ package it.unicam.cs.puzzle15.api.third;
  * The following methods must be implemented:
  * <ul>possibleMoves()</ul>
  */
-public interface FreeCell {
+public interface Cell {
 
     /**
      * Gets the possible moves of the FreeCell.
