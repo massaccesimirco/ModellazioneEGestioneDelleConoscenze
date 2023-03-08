@@ -22,12 +22,6 @@ public interface Board {
     void fillBoard(int size);
 
     /**
-     * Shuffles the board.
-     * The attribute shuffleDegree must be incremented by 1.
-     */
-    void shuffle(int times);
-
-    /**
      * Returns the size of the board.
      *
      * @return the size of the board.
@@ -35,9 +29,18 @@ public interface Board {
     int getSize();
 
     /**
-     * Returns the shuffleDegree of the board.
+     * Swap the cell in the given position with the Cell.
      *
-     * @return the shuffleDegree of the board.
+     * @param row    the row of the cell to swap.
+     * @param column the column of the cell to swap.
      */
-    int getShuffleDegree();
+    void swap(Directions direction, int row, int column);
+
+    /**
+     * Checks if the board is solved.
+     * The board is solved if the numbers are in order from 1 to size^2 - 1 and the last cell is 0.
+     *
+     * @return true if the board is solved, false otherwise.
+     */
+    boolean isSolved();
 }

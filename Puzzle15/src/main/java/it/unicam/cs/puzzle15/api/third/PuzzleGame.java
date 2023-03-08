@@ -6,6 +6,20 @@ package it.unicam.cs.puzzle15.api.third;
 public interface PuzzleGame {
 
     /**
+     * Shuffles the board.
+     * The attribute shuffleDegree must be incremented by 1.
+     */
+    void shuffle(int times);
+
+    /**
+     * Gets the possible moves of the FreeCell.
+     * The possible moves are the directions in which the FreeCell can be moved.
+     *
+     * @return the possible moves of the FreeCell.
+     */
+    Directions[] possibleMoves(int x, int y);
+
+    /**
      * Moves the FreeCell in the specified direction invoking the right method.
      *
      * @param direction the direction in which the FreeCell has to be moved
@@ -14,33 +28,33 @@ public interface PuzzleGame {
      */
     void move(Cell cell, Directions direction);
 
-    /**
-     * Moves the FreeCell up.
-     *
-     * @param cell the FreeCell to be moved up.
-     */
-    void moveUp(Cell cell);
-
-    /**
-     * Moves the FreeCell down.
-     *
-     * @param cell the FreeCell to be moved down.
-     */
-    void moveDown(Cell cell);
-
-    /**
-     * Moves the FreeCell left.
-     *
-     * @param cell the FreeCell to be moved left.
-     */
-    void moveLeft(Cell cell);
-
-    /**
-     * Moves the FreeCell right.
-     *
-     * @param cell the FreeCell to be moved right.
-     */
-    void moveRight(Cell cell);
+//    /**
+//     * Moves the Cell up.
+//     *
+//     * @param direction the direction in which the Cell has to be moved
+//     */
+//    void moveUp(Directions direction);
+//
+//    /**
+//     * Moves the Cell down.
+//     *
+//     * @param direction the direction in which the Cell has to be moved
+//     */
+//    void moveDown(Directions direction);
+//
+//    /**
+//     * Moves the Cell left.
+//     *
+//     * @param direction the direction in which the Cell has to be moved
+//     */
+//    void moveLeft(Directions direction);
+//
+//    /**
+//     * Moves the Cell right.
+//     *
+//     * @param direction the direction in which the Cell has to be moved
+//     */
+//    void moveRight(Directions direction);
 
     /**
      * Checks if the puzzle is solved by checking if the shuffleDegree is 0.

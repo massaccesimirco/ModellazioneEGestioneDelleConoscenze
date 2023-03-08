@@ -9,14 +9,6 @@ package it.unicam.cs.puzzle15.api.third;
 public interface Cell {
 
     /**
-     * Gets the possible moves of the FreeCell.
-     * The possible moves are the directions in which the FreeCell can be moved.
-     *
-     * @return the possible moves of the FreeCell.
-     */
-    Directions[] possibleMoves(int x, int y);
-
-    /**
      * Gets the row of the cell.
      *
      * @return the row of the cell.
@@ -29,4 +21,18 @@ public interface Cell {
      * @return the column of the cell.
      */
     public int getColumn();
+
+    /**
+     * Sets the row of the cell.
+     *
+     * @param x the row of the cell.
+     */
+    public void setRow(int x);
+
+    /**
+     * Sets the column of the cell.
+     *
+     * @param y the column of the cell.
+     */
+    public void setColumn(int y);
 }
