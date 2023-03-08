@@ -14,9 +14,16 @@ package it.unicam.cs.puzzle15.api.third;
 public interface Directions {
 
     /**
-     * Returns the offset of the direction.
+     * Gets the offset of the column.
      *
-     * @return the offset of the direction.
+     * @return the offset of the column.
      */
-    int getOffset();
+    int getColumnOffset();
+
+    /**
+     * Gets the offset of the row.
+     *
+     * @return the offset of the row.
+     */
+    int getRowOffset();
 }

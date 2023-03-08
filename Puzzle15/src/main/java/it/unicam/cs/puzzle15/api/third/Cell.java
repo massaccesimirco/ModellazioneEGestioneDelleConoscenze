@@ -14,5 +14,19 @@ public interface Cell {
      *
      * @return the possible moves of the FreeCell.
      */
-    Directions[] possibleMoves();
+    Directions[] possibleMoves(int x, int y);
+
+    /**
+     * Gets the row of the cell.
+     *
+     * @return the row of the cell.
+     */
+    public int getRow();
+
+    /**
+     * Gets the column of the cell.
+     *
+     * @return the column of the cell.
+     */
+    public int getColumn();
 }

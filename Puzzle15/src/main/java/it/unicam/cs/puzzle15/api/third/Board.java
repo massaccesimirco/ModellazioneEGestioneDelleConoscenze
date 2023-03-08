@@ -25,7 +25,7 @@ public interface Board {
      * Shuffles the board.
      * The attribute shuffleDegree must be incremented by 1.
      */
-    void shuffle();
+    void shuffle(int times);
 
     /**
      * Returns the size of the board.
