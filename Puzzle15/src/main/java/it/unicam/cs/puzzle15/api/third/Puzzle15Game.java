@@ -131,4 +131,19 @@ public class Puzzle15Game implements PuzzleGame {
     public boolean isSolved() {
         return board.isSolved();
     }
+
+    @Override
+    public String toString() {
+        return board.toString();
+    }
+
+    @Override
+    public Board getBoard() {
+        return board;
+    }
+
+    @Override
+    public Cell getCell() {
+        return movingCell;
+    }
 }

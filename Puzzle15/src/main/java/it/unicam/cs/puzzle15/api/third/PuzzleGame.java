@@ -63,4 +63,18 @@ public interface PuzzleGame {
      * @return true if the puzzle is solved, false otherwise.
      */
     boolean isSolved();
+
+    /**
+     * Gets the board.
+     *
+     * @return the board.
+     */
+    Board getBoard();
+
+    /**
+     * Gets the Cell.
+     *
+     * @return the Cell.
+     */
+    Cell getCell();
 }

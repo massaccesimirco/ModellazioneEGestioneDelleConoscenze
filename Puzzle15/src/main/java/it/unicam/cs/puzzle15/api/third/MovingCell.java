@@ -32,4 +32,8 @@ public class MovingCell implements Cell {
     public void setColumn(int y) {
         this.y = y;
     }
+
+    public String toString() {
+        return " ";
+    }
 }
