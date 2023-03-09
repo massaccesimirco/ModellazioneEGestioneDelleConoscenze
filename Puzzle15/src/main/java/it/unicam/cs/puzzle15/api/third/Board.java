@@ -37,8 +37,7 @@ public interface Board {
     void swap(Directions direction, Cell cell);
 
     /**
-     * Checks if the board is solved.
-     * The board is solved if the numbers are in order from 1 to size^2 - 1 and the last cell is 0.
+     * Checks if the board is solved with the shuffling degree.
      *
      * @return true if the board is solved, false otherwise.
      */
