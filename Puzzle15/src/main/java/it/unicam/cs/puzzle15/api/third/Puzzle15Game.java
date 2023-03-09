@@ -37,7 +37,7 @@ public class Puzzle15Game implements PuzzleGame {
     public Puzzle15Game(int size) {
         this.size = size;
         this.board = new Puzzle15Board(size);
-        this.movingCell = new MovingCell(size - 1, size - 1);
+        this.movingCell = new MovingCell(size - 1, size - 1, size);
     }
 
     @Override
@@ -51,12 +51,12 @@ public class Puzzle15Game implements PuzzleGame {
 
         // shuffle the board
         for (int i = 0; i < times; i++) {
-            int x = random.nextInt(size);
-            int y = random.nextInt(size);
+            int x = random.nextInt(this.size);
+            int y = random.nextInt(this.size);
             Directions[] directions = possibleMoves(x, y);
             int index = random.nextInt(directions.length);
             Directions direction = directions[index];
-            move(new MovingCell(x, y), direction);
+            move(new MovingCell(x, y, this.size), direction);
         }
     }
 
@@ -96,7 +96,7 @@ public class Puzzle15Game implements PuzzleGame {
     public void move(Cell cell, Directions direction) {
 
         // swap the moving cell with the cell in the specified direction
-        board.swap(direction, cell.getRow(), cell.getColumn());
+        board.swap(direction, cell);
     }
 
     @Override

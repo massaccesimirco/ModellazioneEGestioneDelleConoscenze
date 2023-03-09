@@ -42,4 +42,14 @@ public interface Cell {
      * @return the value of the cell.
      */
     public int getValue();
+
+    /**
+     * Returns the Manhattan distance obtained when considering the
+     * value n placed in this location.
+     *
+     * @param n an integer value
+     * @return the Manhattan distance obtained when considering the
+     * value n placed in this location.
+     */
+    public int getDisorderDegree(int n);
 }

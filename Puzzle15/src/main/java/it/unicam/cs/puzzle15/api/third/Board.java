@@ -31,15 +31,6 @@ public interface Board {
     /**
      * Swap the cell in the given position with the Cell.
      *
-     * @param row       the row of the cell to swap.
-     * @param column    the column of the cell to swap.
-     * @param direction the direction of the cell to swap.
-     */
-    void swap(Directions direction, int row, int column);
-
-    /**
-     * Swap the cell in the given position with the Cell.
-     *
      * @param direction the direction of the cell to swap.
      * @param cell      the cell to swap.
      */
