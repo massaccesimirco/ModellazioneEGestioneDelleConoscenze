@@ -17,23 +17,28 @@ public class MovingCell implements Cell {
         this.y = y;
     }
 
+    @Override
     public int getRow() {
         return x;
     }
 
+    @Override
     public int getColumn() {
         return y;
     }
 
+    @Override
     public void setRow(int x) {
         this.x = x;
     }
 
+    @Override
     public void setColumn(int y) {
         this.y = y;
     }
 
-    public String toString() {
-        return " ";
+    @Override
+    public int getValue() {
+        return 0;
     }
 }

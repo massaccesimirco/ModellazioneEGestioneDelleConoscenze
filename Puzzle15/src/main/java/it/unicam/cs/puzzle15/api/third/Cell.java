@@ -35,4 +35,11 @@ public interface Cell {
      * @param y the column of the cell.
      */
     public void setColumn(int y);
+
+    /**
+     * Gets the value of the cell which must be 0.
+     *
+     * @return the value of the cell.
+     */
+    public int getValue();
 }

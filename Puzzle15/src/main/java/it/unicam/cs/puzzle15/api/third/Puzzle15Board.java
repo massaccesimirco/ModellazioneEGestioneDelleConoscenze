@@ -57,10 +57,14 @@ public class Puzzle15Board implements Board {
             }
         }
 
+        // set the moving cell
+        this.movingCell = new MovingCell(size - 1, size - 1);
+
         // set the last cell to 0
-        this.board[size - 1][size - 1] = 0;
+        this.board[size - 1][size - 1] = movingCell.getValue();
     }
 
+    @Override
     public void swap(Directions directions, int row, int column) {
 
         // swap the cell in the given position with the Cell
@@ -71,6 +75,18 @@ public class Puzzle15Board implements Board {
         // update the moving cell
         this.movingCell.setRow(row + directions.getRowOffset());
         this.movingCell.setColumn(column + directions.getColumnOffset());
+    }
+
+    public void swap(Directions direction, Cell movingCell) {
+
+        // swap the cell in the given position with the Cell
+        int tmp = this.board[movingCell.getRow()][movingCell.getColumn()];
+        this.board[movingCell.getRow()][movingCell.getColumn()] = this.board[movingCell.getRow() + direction.getRowOffset()][movingCell.getColumn() + direction.getColumnOffset()];
+        this.board[movingCell.getRow() + direction.getRowOffset()][movingCell.getColumn() + direction.getColumnOffset()] = tmp;
+
+        // update the moving cell
+        this.movingCell.setRow(movingCell.getRow() + direction.getRowOffset());
+        this.movingCell.setColumn(movingCell.getColumn() + direction.getColumnOffset());
     }
 
     @Override

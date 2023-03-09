@@ -86,7 +86,7 @@ public class Puzzle15Game implements PuzzleGame {
 
         // if the FreeCell is in the last column, it can't move right
         if (y < size - 1) {
-            directions[i++] = CellMovements.RIGHT;
+            directions[i] = CellMovements.RIGHT;
         }
 
         return directions;
@@ -99,42 +99,9 @@ public class Puzzle15Game implements PuzzleGame {
         board.swap(direction, cell.getRow(), cell.getColumn());
     }
 
-//    @Override
-//    public void moveUp(Directions direction) {
-//
-//        // swap the moving cell with the cell in the specified direction
-//        board.swap(direction, movingCell.getRow(), movingCell.getColumn());
-//    }
-//
-//    @Override
-//    public void moveDown(Directions direction) {
-//
-//        // swap the moving cell with the cell in the specified direction
-//        board.swap(direction, movingCell.getRow(), movingCell.getColumn());
-//    }
-//
-//    @Override
-//    public void moveLeft(Directions direction) {
-//
-//        // swap the moving cell with the cell in the specified direction
-//        board.swap(direction, movingCell.getRow(), movingCell.getColumn());
-//    }
-//
-//    @Override
-//    public void moveRight(Directions direction) {
-//
-//        // swap the moving cell with the cell in the specified direction
-//        board.swap(direction, movingCell.getRow(), movingCell.getColumn());
-//    }
-
     @Override
     public boolean isSolved() {
         return board.isSolved();
-    }
-
-    @Override
-    public String toString() {
-        return board.toString();
     }
 
     @Override
