@@ -3,19 +3,40 @@ package it.unicam.cs.expression.api.loreti;
 /**
  * An expression evaluator is an object that can evaluate an expression to an integer value.
  */
-public interface IntegerExpressionEvaluator {
+public class IntegerExpressionEvaluator implements ExpressionEvaluator<Integer> {
 
-    int sum(int a, int b);
+    @Override
+    public Integer sum(Integer a, Integer b) {
+        return a + b;
+    }
 
-    int diff(int a, int b);
+    @Override
+    public Integer diff(Integer a, Integer b) {
+        return a - b;
+    }
 
-    int mul(int a, int b);
+    @Override
+    public Integer mul(Integer a, Integer b) {
+        return a * b;
+    }
 
-    int div(int a, int b);
+    @Override
+    public Integer div(Integer a, Integer b) {
+        return a / b;
+    }
 
-    int intOf(NumericExpression expression);
+    @Override
+    public Integer valueOf(NumericExpression expression) {
+        return expression.getValue();
+    }
 
-    int plus(int value);
+    @Override
+    public Integer plus(Integer value) {
+        return value;
+    }
 
-    int minus(int value);
+    @Override
+    public Integer minus(Integer value) {
+        return -value;
+    }
 }

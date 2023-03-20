@@ -7,7 +7,7 @@ public enum UnaryOperator {
 
     PLUS, MINUS;
 
-    public int apply(IntegerExpressionEvaluator evaluator, int value) {
+    public <T> T apply(ExpressionEvaluator<T> evaluator, T value) {
         return switch (this) {
             case PLUS -> evaluator.plus(value);
             case MINUS -> evaluator.minus(value);

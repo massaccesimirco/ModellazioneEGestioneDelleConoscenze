@@ -14,7 +14,7 @@ public enum BinaryOperator {
      * @param v2 the second operand
      * @return the result of the operation
      */
-    public int apply(IntegerExpressionEvaluator evaluator, int v1, int v2) {
+    public <T> T apply(ExpressionEvaluator<T> evaluator, T v1, T v2) {
         return switch (this) {
             case SUM -> evaluator.sum(v1, v2);
             case DIF -> evaluator.diff(v1, v2);

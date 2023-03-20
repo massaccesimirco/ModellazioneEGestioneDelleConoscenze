@@ -31,7 +31,7 @@ public class BinaryExpression implements Expression {
     }
 
     @Override
-    public int eval(IntegerExpressionEvaluator evaluator) {
+    public <T> T eval(ExpressionEvaluator<T> evaluator) {
         return operator.apply(evaluator, firstArgument.eval(evaluator), secondArgument.eval(evaluator));
     }
 }

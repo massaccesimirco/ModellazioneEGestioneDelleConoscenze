@@ -17,7 +17,7 @@ public class NumericExpression implements Expression {
     }
 
     @Override
-    public int eval(IntegerExpressionEvaluator evaluator) {
-        return evaluator.intOf(this);
+    public <T> T eval(ExpressionEvaluator<T> evaluator) {
+        return evaluator.valueOf(this);
     }
 }

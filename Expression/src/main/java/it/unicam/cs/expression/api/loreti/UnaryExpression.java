@@ -23,7 +23,7 @@ public class UnaryExpression implements Expression {
     }
 
     @Override
-    public int eval(IntegerExpressionEvaluator evaluator) {
+    public <T> T eval(ExpressionEvaluator<T> evaluator) {
         return operator.apply(evaluator, argument.eval(evaluator));
     }
 }
