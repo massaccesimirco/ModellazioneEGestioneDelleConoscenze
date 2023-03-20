@@ -1,5 +1,8 @@
-package it.unica.cs.expression.api;
+package it.unicam.cs.expression.api.loreti;
 
+/**
+ * A numeric expression is an expression that represents a numeric value.
+ */
 public class NumericExpression implements Expression {
 
     private final int value;

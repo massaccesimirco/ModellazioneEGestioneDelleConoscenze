@@ -1,5 +1,8 @@
-package it.unica.cs.expression.api;
+package it.unicam.cs.expression.api.loreti;
 
+/**
+ * A unary expression is an expression that has a single operand.
+ */
 public class UnaryExpression implements Expression {
 
     private final Expression argument;

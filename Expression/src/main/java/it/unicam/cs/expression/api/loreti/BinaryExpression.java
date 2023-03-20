@@ -1,5 +1,8 @@
-package it.unica.cs.expression.api;
+package it.unicam.cs.expression.api.loreti;
 
+/**
+ * A binary expression is an expression that consists of two operands and an operator.
+ */
 public class BinaryExpression implements Expression {
 
     private final Expression firstArgument;
