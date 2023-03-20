@@ -5,11 +5,17 @@ package it.unicam.cs.expression.api.loreti;
  */
 public interface IntegerExpressionEvaluator {
 
-    /**
-     * Evaluate the given expression to an integer value.
-     *
-     * @param expression the expression to evaluate
-     * @return the integer value of the expression
-     */
-    int eval(Expression expression);
+    int sum(int a, int b);
+
+    int diff(int a, int b);
+
+    int mul(int a, int b);
+
+    int div(int a, int b);
+
+    int intOf(NumericExpression expression);
+
+    int plus(int value);
+
+    int minus(int value);
 }

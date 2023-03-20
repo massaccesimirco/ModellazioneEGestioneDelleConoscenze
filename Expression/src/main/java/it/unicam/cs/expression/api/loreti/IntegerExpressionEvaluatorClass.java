@@ -6,23 +6,37 @@ package it.unicam.cs.expression.api.loreti;
 public class IntegerExpressionEvaluatorClass implements IntegerExpressionEvaluator {
 
     @Override
-    public int eval(Expression expression) {
-        return 0;
+    public int sum(int a, int b) {
+        return a + b;
     }
 
-    public int eval(NumericExpression expression) {
+    @Override
+    public int diff(int a, int b) {
+        return a - b;
+    }
+
+    @Override
+    public int mul(int a, int b) {
+        return a * b;
+    }
+
+    @Override
+    public int div(int a, int b) {
+        return a / b;
+    }
+
+    @Override
+    public int intOf(NumericExpression expression) {
         return expression.getValue();
     }
 
-    public int eval(BinaryExpression expression) {
-        return expression.getOperator().apply(eval(expression.getFirstArgument()), eval(expression.getSecondArgument()));
+    @Override
+    public int plus(int value) {
+        return value;
     }
 
-    public int eval(UnaryExpression expression) {
-        if (expression.getOperator() == UnaryOperator.MINUS) {
-            return -eval(expression.getArgument());
-        } else {
-            return eval(expression.getArgument());
-        }
+    @Override
+    public int minus(int value) {
+        return -value;
     }
 }

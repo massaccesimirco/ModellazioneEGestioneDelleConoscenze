@@ -5,11 +5,5 @@ package it.unicam.cs.expression.api.loreti;
  */
 public interface Expression {
 
-
-
-    /*int evalToInteger();
-
-    double evalToDouble();
-
-    long evalToLong();*/
+    int eval(IntegerExpressionEvaluator evaluator);
 }

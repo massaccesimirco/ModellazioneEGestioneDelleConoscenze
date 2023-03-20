@@ -23,22 +23,7 @@ public class UnaryExpression implements Expression {
     }
 
     @Override
-    public int evalToInteger() {
-
-        if (this.operator == UnaryOperator.MINUS) {
-            return -this.argument.evalToInteger();
-        } else {
-            return this.argument.evalToInteger();
-        }
-    }
-
-    @Override
-    public double evalToDouble() {
-
-        if (this.operator == UnaryOperator.MINUS) {
-            return -this.argument.evalToDouble();
-        } else {
-            return this.argument.evalToDouble();
-        }
+    public int eval(IntegerExpressionEvaluator evaluator) {
+        return operator.apply(evaluator, argument.eval(evaluator));
     }
 }

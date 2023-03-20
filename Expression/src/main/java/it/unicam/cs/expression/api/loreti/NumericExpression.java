@@ -17,12 +17,7 @@ public class NumericExpression implements Expression {
     }
 
     @Override
-    public int evalToInteger() {
-        return getValue();
-    }
-
-    @Override
-    public double evalToDouble() {
-        return getValue();
+    public int eval(IntegerExpressionEvaluator evaluator) {
+        return evaluator.intOf(this);
     }
 }

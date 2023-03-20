@@ -31,12 +31,7 @@ public class BinaryExpression implements Expression {
     }
 
     @Override
-    public int evalToInteger() {
-        return operator.apply(firstArgument.evalToInteger(), secondArgument.evalToInteger());
-    }
-
-    @Override
-    public double evalToDouble() {
-        return 0;
+    public int eval(IntegerExpressionEvaluator evaluator) {
+        return operator.apply(evaluator, firstArgument.eval(evaluator), secondArgument.eval(evaluator));
     }
 }
