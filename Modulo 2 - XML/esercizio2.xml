@@ -1,0 +1,25 @@
+<!DOCTYPE movies [
+        <!ELEMENT movies (movie+)>
+        <!ELEMENT movie (title,director,actor+)>
+        <!ATTLIST movie id ID #REQUIRED>
+        <!ELEMENT title (#PCDATA)>
+        <!ATTLIST title lang CDATA #REQUIRED>
+        <!ELEMENT director (#PCDATA)>
+        <!ELEMENT actor (#PCDATA)>
+        ]>
+
+<movies>
+    <movie id="a">
+        <title lang="english">Star Wars</title>
+        <director>George Lucas</director>
+        <actor>Mark Hamill</actor>
+        <actor>Harrison Ford</actor>
+        <actor>Carrie Fisher</actor>
+    </movie>
+    <movie id="b">
+        <title lang="english">Indiana Jones</title>
+        <director>Steven Spielberg</director>
+        <actor>Harrison Ford</actor>
+        <actor>Sean Connery</actor>
+    </movie>
+</movies>

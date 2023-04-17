@@ -1,0 +1,35 @@
+<?xml version ="1.0" ?>
+
+<!DOCTYPE planner [
+        <!ELEMENT planner (year+)>
+        <!ATTLIST planner xmlns CDATA #REQUIRED>
+        <!ELEMENT year (date+)>
+        <!ATTLIST year value CDATA #REQUIRED>
+        <!ELEMENT date (note+)>
+        <!ATTLIST date month CDATA #REQUIRED>
+        <!ATTLIST date day CDATA #REQUIRED>
+        <!ELEMENT note (#PCDATA)>
+        <!ATTLIST note time CDATA #REQUIRED>
+        ]>
+
+
+<planner xmlns="">
+    <year value="2000">
+        <date month="7" day="15">
+            <note time="1430">Doctor's appointment</note>
+            <note time="1430">Doctor's appointment</note>
+        </date>
+        <date month="7" day="16">
+            <note time="1430">Doctor's appointment</note>
+        </date>
+        <date month="7" day="17">
+            <note time="1430">Doctor's appointment</note>
+        </date>
+        <date month="7" day="18">
+            <note time="1430">Doctor's appointment</note>
+        </date>
+        <date month="7" day="19">
+            <note time="1430">Doctor's appointment</note>
+        </date>
+    </year>
+</planner>
